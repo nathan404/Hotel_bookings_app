@@ -4,11 +4,11 @@
         <h2>Add a guest booking</h2>
             <div>
                 <label for="guestname">Guest name:</label>
-                <input type="text" id="guestname" v-model="guestname" />
+                <input type="text" id="guestname" v-model="guestname" required/>
             </div>
             <div>
                 <label for="emailaddress">Guest email address:</label>
-                <input type="email" id="emailaddress" v-model="emailaddress" />
+                <input type="email" id="emailaddress" v-model="emailaddress" required/>
             </div>
             <div>
                 <label for="checkinstatus">Check in status:</label>
@@ -16,7 +16,7 @@
                     <option disabled value="">Select check in status</option>
                     <option>Not checked in</option>
                     <option>Checked in</option>
-                    <option>Checked out</option>
+                    <!-- <option>Checked out</option> -->
                 </select>
             </div>
 
@@ -58,5 +58,7 @@ export default {
 </script>
 
 <style>
-
+p h1 h3{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 </style>

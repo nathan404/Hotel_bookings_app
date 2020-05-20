@@ -21,6 +21,16 @@ export default {
         handleDeleteGuest(id){
             BookingService.deleteBooking(id)
             .then(response => eventBus.$emit('booking-deleted', id))
+        },
+     
+        handleCheckIn(id){
+        const payload = {
+            checkinstatus: "Checked in"
+        };
+
+        BookingService.updateBooking(id)
+    
+        .then(response => eventBus.$emit('booking-updated', id))
         }
     }
 }
@@ -30,8 +40,11 @@ export default {
 p, h1, h2, h3, form{
   font-family: Verdana, sans-serif;
 }
-h1{
-    padding:0;
+h2{
+    margin:0.25 0;
+}
+h3{
+    margin:0 0 0.25rem 0;
 }
 button {
   padding:0.5rem;
