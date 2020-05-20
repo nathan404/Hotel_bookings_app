@@ -12,13 +12,13 @@ app.use(bodyParser.json());
 
 MongoClient.connect('mongodb://localhost:27017')
     .then((client) => {
-        const db = client.db('hotel')
-        const bookingsCollection = db.collection('bookings')
-        const bookingsRouter = createRouter(bookingsCollection)
-        app.use('/api/bookings', bookingsRouter)
+        const db = client.db('hotel');
+        const bookingsCollection = db.collection('bookings');
+        const bookingsRouter = createRouter(bookingsCollection);
+        app.use('/api/bookings', bookingsRouter);
     })
     .catch(console.err)
 
 app.listen(3000, function(){
     console.log(`Listening on port ${ this.address().port }`)
-})
+});
